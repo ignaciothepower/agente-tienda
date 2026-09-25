@@ -1,0 +1,6 @@
+Cliente [ana]: ¿Te acuerdas de cómo me llamo?
+  [router] -> charla
+  [llm] llama3.1 22 s
+  [langfuse] https://cloud.langfuse.com/project/cmuep8d2j02kzad0cibv40qt1/traces/f318aaa7cef7341b318ea4d2f5de49ba
+Agente: Sí, te llamas Ana. ¿En qué puedo ayudarte más?
+(proceso terminado en 25 s)

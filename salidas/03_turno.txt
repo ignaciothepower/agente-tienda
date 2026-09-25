@@ -1,0 +1,12 @@
+Cliente [ana]: Hola, soy Ana. ¿Cuándo llega mi pedido 1234?
+  [router] -> pedido
+  [mcp] consultar_pedido({"numero": "1234"}) -> {
+  "estado": "enviado",
+  "transportista": "SEUR",
+  "llegada": "jueves",
+  "importe_eur": 49.9
+}  [1360 ms, http://localhost:8000]
+  [llm] llama3.1 41 s
+  [langfuse] https://cloud.langfuse.com/project/cmuep8d2j02kzad0cibv40qt1/traces/026759373b96fee8dcd0fd970481a7a2
+Agente: Hola Ana, tu pedido 1234 ya ha sido enviado y se espera que llegue el jueves. Puedes verificar el estado de tu pedido en nuestra página de seguimiento de pedidos. [tool consultar_pedido]
+(proceso terminado en 46 s)

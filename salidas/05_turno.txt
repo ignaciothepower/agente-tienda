@@ -1,0 +1,10 @@
+Cliente [ana]: ¿Cuánto cuesta el envío a Canarias?
+  [router] -> rag
+  [rag] 0.382 OK [envios.txt] ENVIOS: Envio a Canarias, Ceuta y Melilla: 7-10 dias laborables y 9,95
+  [rag] 0.517 OK [envios.txt] ENVIOS: Envio estandar a Peninsula: 3,95 EUR y llega en 48-72 horas la
+  [rag] 0.540 OK [envios.txt] ENVIOS: Envio a Baleares: 5-7 dias laborables y 7,95 EUR.
+  [rag] 0.553 OK [envios.txt] ENVIOS: Transportistas: SEUR para Peninsula y Correos Express para isl
+  [llm] llama3.1 31 s
+  [langfuse] https://cloud.langfuse.com/project/cmuep8d2j02kzad0cibv40qt1/traces/f8d724fbf5424609b2e17f1dd64548ba
+Agente: El envío a Canarias cuesta 9,95 EUR. El plazo de entrega es de 7-10 días laborables. [envios.txt]
+(proceso terminado en 51 s)

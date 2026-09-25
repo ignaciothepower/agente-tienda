@@ -1,0 +1,66 @@
+Indexados 8 fragmentos en la tabla tienda_fragmentos (Neon)
+
+
+
+P: ¿Cuánto cuesta el envío a Canarias?
+
+  0.433 [envios.txt] ENVIOS: Baleares: 5-7 dias laborables y 7,95 EUR. Canarias, Ceuta y Melilla: 7-10 dias, co
+
+  0.472 [envios.txt] ENVIOS: Envio estandar a Peninsula: 3,95 EUR y llega en 48-72 horas laborables.
+
+- El envio
+
+  0.527 [politica_devoluciones.txt] POLITICA DE DEVOLUCIONES: Tienes 30 dias naturales desde la entrega para devolver un produ
+
+
+
+P: Soy una L, ¿qué talla de camiseta me pido?
+
+  0.295 [tallas.txt] GUIA DE TALLAS: Camisetas y sudaderas: talla S = 88-94 cm de pecho, M = 95-101 cm, L = 102
+
+  0.588 [tallas.txt] GUIA DE TALLAS: Los vaqueros se indican con la cintura en pulgadas (28 a 38); el largo est
+
+  0.887 [garantia.txt] GARANTIA: Todos los productos tienen 3 anos de garantia legal desde la entrega (ley europe
+
+
+
+P: Se me han roto los auriculares Volta, ¿tienen garantía?
+
+  0.745 [garantia.txt] GARANTIA: Todos los productos tienen 3 anos de garantia legal desde la entrega (ley europe
+
+  0.843 [envios.txt] ENVIOS: Baleares: 5-7 dias laborables y 7,95 EUR. Canarias, Ceuta y Melilla: 7-10 dias, co
+
+  0.846 [garantia.txt] GARANTIA: Para usar la garantia escribe a soporte con el numero de pedido y una foto del d
+
+
+
+P: ¿Puedo devolver una tarjeta regalo?
+
+  0.411 [politica_devoluciones.txt] POLITICA DE DEVOLUCIONES: Productos personalizados y tarjetas regalo no admiten devolucion
+
+  0.507 [politica_devoluciones.txt] POLITICA DE DEVOLUCIONES: Tienes 30 dias naturales desde la entrega para devolver un produ
+
+  0.643 [garantia.txt] GARANTIA: Para usar la garantia escribe a soporte con el numero de pedido y una foto del d
+
+
+
+P: ¿Quién ganó el mundial de 2010?
+
+  0.869 [politica_devoluciones.txt] POLITICA DE DEVOLUCIONES: Productos personalizados y tarjetas regalo no admiten devolucion
+
+  0.920 [tallas.txt] GUIA DE TALLAS: Camisetas y sudaderas: talla S = 88-94 cm de pecho, M = 95-101 cm, L = 102
+
+  0.942 [envios.txt] ENVIOS: Baleares: 5-7 dias laborables y 7,95 EUR. Canarias, Ceuta y Melilla: 7-10 dias, co
+
+
+
+P: Hola, me llamo Ana
+
+  0.838 [envios.txt] ENVIOS: Baleares: 5-7 dias laborables y 7,95 EUR. Canarias, Ceuta y Melilla: 7-10 dias, co
+
+  0.854 [envios.txt] ENVIOS: Envio estandar a Peninsula: 3,95 EUR y llega en 48-72 horas laborables.
+
+- El envio
+
+  0.940 [tallas.txt] GUIA DE TALLAS: Los vaqueros se indican con la cintura en pulgadas (28 a 38); el largo est
+

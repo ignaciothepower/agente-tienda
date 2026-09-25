@@ -1,0 +1,7 @@
+Cliente [ana]: ¿Y eso cuánto es en dólares?
+  [router] -> precio
+  [mcp] convertir_precio({"importe_eur": 49.9, "moneda": "USD"}) -> 49.90 EUR = 56.90 USD (tipo 1.1403, BCE 2026-09-25)  [1490 ms, http://localhost:8000]
+  [llm] llama3.1 21 s
+  [langfuse] https://cloud.langfuse.com/project/cmuep8d2j02kzad0cibv40qt1/traces/f2ddfdd946de40fd2d6df6087a3933ba
+Agente: Tu pedido 1234 fue realizado en euros, pero puedo convertir el precio a dólares para ti. El precio en dólares es de 56.90 USD, según el tipo de cambio actual [tool convertir_precio].
+(proceso terminado en 26 s)
