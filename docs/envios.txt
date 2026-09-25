@@ -1,0 +1,8 @@
+ENVIOS · Tienda online (ficticia, material de clase)
+- Envio estandar a Peninsula: 3,95 EUR y llega en 48-72 horas laborables.
+- El envio es GRATIS en pedidos de mas de 50 EUR.
+- Envio urgente (24 horas laborables): 6,95 EUR, solo si el pedido se hace antes de las 14:00.
+- Envio a Baleares: 5-7 dias laborables y 7,95 EUR.
+- Envio a Canarias, Ceuta y Melilla: 7-10 dias laborables y 9,95 EUR, con posibles tasas de aduana.
+- Transportistas: SEUR para Peninsula y Correos Express para islas.
+- Cuando el pedido sale del almacen recibes un email con el numero de seguimiento.

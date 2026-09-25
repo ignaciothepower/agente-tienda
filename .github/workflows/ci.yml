@@ -1,0 +1,46 @@
+# CI del agente (igual que en la S11): ruff + pytest en cada push y pull request a main
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  calidad:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-ci.txt
+      # requirements-ci.txt: sin torch. Los tests usan un LLM falso y memoria en RAM (ver tests/)
+      - name: Instalar dependencias
+        run: pip install -r requirements-ci.txt
+      - name: Linting (ruff check)
+        run: ruff check .
+      - name: Formato (ruff format --check)
+        run: ruff format --check .
+      - name: Tests (pytest)
+        run: pytest -v
+
+  # Los secretos NO estan en el codigo: llegan como variables de entorno desde GitHub Secrets
+  secretos:
+    needs: calidad
+    runs-on: ubuntu-latest
+    env:
+      LANGFUSE_PUBLIC_KEY: ${{ secrets.LANGFUSE_PUBLIC_KEY }}
+      LANGFUSE_SECRET_KEY: ${{ secrets.LANGFUSE_SECRET_KEY }}
+      LANGFUSE_HOST: ${{ vars.LANGFUSE_HOST }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Instalar dependencias
+        run: pip install -r requirements-ci.txt
+      - name: Smoke test de LangFuse (con los Secrets)
+        run: python scripts/check_langfuse.py

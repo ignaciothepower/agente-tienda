@@ -1,0 +1,13 @@
+langgraph>=1.2
+langgraph-checkpoint-postgres>=2.0
+psycopg[binary]>=3.2
+langchain>=1.0  # lo pide la integracion de LangFuse (langfuse.langchain.CallbackHandler)
+langchain-core>=1.6
+langchain-ollama>=1.1
+langchain-text-splitters>=0.3
+sentence-transformers>=3.0
+pgvector>=0.3
+mcp[cli]>=2.2.0
+httpx>=0.28
+python-dotenv>=1.0
+langfuse>=3.0

@@ -1,0 +1,20 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Secretos: el .env NUNCA entra en el repositorio (la plantilla es .env.example)
+.env
+.pytest_cache/
+.ruff_cache/
+
+# Salidas locales de las demos
+.pip.log
+salidas/
+.mcp_local.log

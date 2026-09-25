@@ -1,0 +1,8 @@
+# Lo minimo para la CI: sin torch ni sentence-transformers (los tests no los usan, ver tests/)
+langgraph>=1.2
+langchain-core>=1.6
+langchain-ollama>=1.1
+python-dotenv>=1.0
+langfuse>=3.0
+pytest>=8
+ruff>=0.6
