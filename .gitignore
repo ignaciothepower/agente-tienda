@@ -16,5 +16,5 @@ wheels/
 
 # Salidas locales de las demos
 .pip.log
-salidas/
+salidas/*.raw
 .mcp_local.log

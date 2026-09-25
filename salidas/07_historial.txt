@@ -1,0 +1,9 @@
+Cliente: Hola, soy Ana. ¿Cuándo llega mi pedido 1234?
+Agente : Hola Ana, tu pedido 1234 ya ha sido enviado y se espera que llegue el jueves. Puedes verificar el estado de tu pedido en nuestra página de seguimiento de pedidos. [tool consultar_pedido]
+Cliente: ¿Y eso cuánto es en dólares?
+Agente : Tu pedido 1234 fue realizado en euros, pero puedo convertir el precio a dólares para ti. El precio en dólares es de 56.90 USD, según el tipo de cambio actual [tool convertir_precio].
+Cliente: ¿Cuánto cuesta el envío a Canarias?
+Agente : El envío a Canarias cuesta 9,95 EUR. El plazo de entrega es de 7-10 días laborables. [envios.txt]
+Cliente: ¿Te acuerdas de cómo me llamo?
+Agente : Sí, te llamas Ana. ¿En qué puedo ayudarte más?
+ultimo_pedido: {'numero': '1234', 'estado': 'enviado', 'transportista': 'SEUR', 'llegada': 'jueves', 'importe_eur': 49.9}

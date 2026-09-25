@@ -1,0 +1,21 @@
+============================= test session starts =============================
+platform win32 -- Python 3.10.11, pytest-9.1.1, pluggy-1.6.0 -- C:\Users\ignaciode\agente-tienda\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\ignaciode\agente-tienda
+configfile: pyproject.toml
+testpaths: tests
+plugins: anyio-4.15.1, langsmith-0.13.0
+collecting ... collected 10 items
+
+tests/test_grafo.py::test_memoria_entre_turnos_y_tool_encadenada PASSED  [ 10%]
+tests/test_grafo.py::test_hilos_separados PASSED                         [ 20%]
+tests/test_grafo.py::test_rag_filtra_por_umbral PASSED                   [ 30%]
+tests/test_router.py::test_decidir[\xbfCu\xe1ndo llega mi pedido 1234?-pedido] PASSED [ 40%]
+tests/test_router.py::test_decidir[\xbfCu\xe1nto es eso en d\xf3lares?-precio] PASSED [ 50%]
+tests/test_router.py::test_decidir[Convierte 20 euros a libras-precio] PASSED [ 60%]
+tests/test_router.py::test_decidir[\xbfCu\xe1nto cuesta el env\xedo a Canarias?-rag] PASSED [ 70%]
+tests/test_router.py::test_decidir[Soy una L, \xbfqu\xe9 talla de camiseta me pido?-rag] PASSED [ 80%]
+tests/test_router.py::test_decidir[Hola, me llamo Ana-charla] PASSED     [ 90%]
+tests/test_router.py::test_extraer_datos PASSED                          [100%]
+
+============================= 10 passed in 0.85s ==============================

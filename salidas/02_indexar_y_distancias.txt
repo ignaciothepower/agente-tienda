@@ -1,0 +1,31 @@
+Indexados 22 fragmentos en la tabla tienda_fragmentos (Neon)
+
+P: ¿Cuánto cuesta el envío a Canarias?
+  0.517 [envios.txt] ENVIOS: Envio estandar a Peninsula: 3,95 EUR y llega en 48-72 horas laborables.
+  0.553 [envios.txt] ENVIOS: Transportistas: SEUR para Peninsula y Correos Express para islas.
+  0.565 [politica_devoluciones.txt] POLITICA DE DEVOLUCIONES: La recogida es gratuita en pedidos de mas de 50 EUR; por debajo 
+
+P: Soy una L, ¿qué talla de camiseta me pido?
+  0.334 [tallas.txt] GUIA DE TALLAS: Camisetas y sudaderas: talla S = 88-94 cm de pecho, M = 95-101 cm, L = 102
+  0.467 [tallas.txt] GUIA DE TALLAS: Si estas entre dos tallas, elige la mayor: nuestras prendas son de corte a
+  0.597 [tallas.txt] GUIA DE TALLAS: Los vaqueros se indican con la cintura en pulgadas (28 a 38); el largo est
+
+P: Se me han roto los auriculares Volta, ¿tienen garantía?
+  0.697 [garantia.txt] GARANTIA: Los auriculares y relojes de la marca propia "Volta" tienen 1 ano extra de garan
+  0.738 [garantia.txt] GARANTIA: La garantia cubre defectos de fabricacion, no el desgaste normal ni los golpes.
+  0.751 [politica_devoluciones.txt] POLITICA DE DEVOLUCIONES: Tienes 30 dias naturales desde la entrega para devolver un produ
+
+P: ¿Puedo devolver una tarjeta regalo?
+  0.411 [politica_devoluciones.txt] POLITICA DE DEVOLUCIONES: Productos personalizados y tarjetas regalo no admiten devolucion
+  0.511 [politica_devoluciones.txt] POLITICA DE DEVOLUCIONES: Tienes 30 dias naturales desde la entrega para devolver un produ
+  0.590 [garantia.txt] GARANTIA: Si el producto no se puede reparar, se cambia por uno igual o se devuelve el din
+
+P: ¿Quién ganó el mundial de 2010?
+  0.758 [tallas.txt] GUIA DE TALLAS: Zapatillas: numeracion europea. Horma estrecha: si tienes el pie ancho, pi
+  0.811 [politica_devoluciones.txt] POLITICA DE DEVOLUCIONES: La recogida es gratuita en pedidos de mas de 50 EUR; por debajo 
+  0.866 [politica_devoluciones.txt] POLITICA DE DEVOLUCIONES: El reembolso se hace en el mismo metodo de pago en un maximo de 
+
+P: Hola, me llamo Ana
+  0.767 [envios.txt] ENVIOS: Cuando el pedido sale del almacen recibes un email con el numero de seguimiento.
+  0.772 [tallas.txt] GUIA DE TALLAS: Zapatillas: numeracion europea. Horma estrecha: si tienes el pie ancho, pi
+  0.811 [envios.txt] ENVIOS: Envio urgente (24 horas laborables): 6,95 EUR, solo si el pedido se hace antes de 

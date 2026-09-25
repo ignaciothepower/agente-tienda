@@ -1,0 +1,3 @@
+$ curl http://51.21.181.141:8000/salud
+{"estado":"ok","servidor":"mi-servidor","tools":["convertir_precio","consultar_pedido"]}
+(0.134945 s)

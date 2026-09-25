@@ -1,0 +1,5 @@
+rag.py:64:121: E501 Line too long (124 > 120)
+rag.py:71:13: S608 Possible SQL injection vector through string-based query construction
+rag.py:83:13: S608 Possible SQL injection vector through string-based query construction
+tests\test_grafo.py:38:121: E501 Line too long (127 > 120)
+Found 4 errors.

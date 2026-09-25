@@ -1,0 +1,12 @@
+Cliente [luis]: Hola, soy Luis. ¿Cómo va mi pedido 5678?
+  [router] -> pedido
+  [mcp] consultar_pedido({"numero": "5678"}) -> {
+  "estado": "en preparacion",
+  "transportista": "-",
+  "llegada": "la semana que viene",
+  "importe_eur": 120.0
+}  [3658 ms, http://51.21.181.141:8000]
+  [llm] llama3.1 50 s
+  [langfuse] https://cloud.langfuse.com/project/cmuep8d2j02kzad0cibv40qt1/traces/9542a9272b2c5c9b27bd2af2e0871151
+Agente: Hola Luis, tu pedido 5678 está en preparación. No tenemos información sobre el transportista que lo llevará a cabo. La llegada está prevista para la semana que viene. [tool consultar_pedido]
+(proceso terminado en 75 s)
