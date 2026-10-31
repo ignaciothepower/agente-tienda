@@ -17,7 +17,7 @@ No hay ninguna tecnología nueva: cada pieza es una sesión del curso, y el graf
 | Herramientas | Servidor MCP propio por Streamable HTTP | S10 | `herramientas.py` + repo [mcp-server-ci](https://github.com/ignaciothepower/mcp-server-ci) |
 | Observabilidad | LangFuse Cloud: una traza por mensaje, con cada nodo | S3, S11 | `agente.py` |
 | Calidad | ruff + pytest (LLM falso, memoria en RAM) + GitHub Actions | S11 | `tests/`, `.github/workflows/ci.yml` |
-| Despliegue | El servidor MCP en una EC2 t3.micro con Docker | S12 | `aws/` |
+| Despliegue | El servidor MCP en Azure Container Apps (HTTPS, escala a cero, solo tu IP) | S12 | [mcp-server-ci](https://github.com/ignaciothepower/mcp-server-ci) `azure/` |
 | LLM | llama3.1 en local con Ollama | S1 | `config.py` |
 
 ## Por qué un router y no "tool calling"
@@ -51,17 +51,18 @@ python agente.py --hilo ana "¿Y eso cuánto es en dólares?"
 python agente.py --hilo ana --historial
 ```
 
-## Desplegar el servidor MCP en AWS
+## Desplegar el servidor MCP en Azure
 
-Desde AWS CloudShell (sin access keys), con el repositorio clonado:
+Desde la Cloud Shell del portal de Azure (nada que instalar en el portátil), con el repositorio del servidor:
 
 ```bash
-export PORTATIL_IP=<la IP de tu portátil>
-bash aws/desplegar_mcp.sh      # EC2 t3.micro + Docker; al final te dice la MCP_URL
-bash aws/apagar.sh             # SIEMPRE al acabar: todo a 0
+git clone https://github.com/ignaciothepower/mcp-server-ci.git && cd mcp-server-ci
+export MI_IP=<la IP pública de tu portátil>      # en el portátil: curl https://api.ipify.org
+bash azure/desplegar.sh        # Container Apps: construye la imagen en la nube y te dice la URL
+bash azure/apagar.sh           # SIEMPRE al acabar: borra el grupo de recursos y comprueba que no queda nada
 ```
 
-Pon la `MCP_URL` que te devuelve en tu `.env` y el agente usará las herramientas en la nube. El "cerebro" (LangGraph + llama3.1) se queda en tu portátil: una t3.micro tiene 1 GB de RAM y un LLM de 8B necesita unos 5 GB. Para tenerlo todo en la nube habría que cambiar el LLM local por una API (por ejemplo Gemini, capa gratuita) y desplegar el agente también.
+Pon la URL que te devuelve (`https://...azurecontainerapps.io`) como `MCP_URL` en tu `.env` y el agente usará las herramientas en la nube. El "cerebro" (LangGraph + llama3.1) se queda en tu portátil: un LLM de 8B necesita unos 5 GB y sin GPU tardaría minutos en responder. Para tenerlo todo en la nube habría que cambiar el LLM local por una API (por ejemplo Azure OpenAI, o la capa gratuita de Gemini para practicar) y desplegar el agente también.
 
 ## Tests y CI
 
@@ -81,7 +82,6 @@ herramientas.py   cliente MCP por HTTP
 config.py         variables de entorno
 docs/             los documentos de la tienda (ficticios)
 tests/            pytest
-aws/              desplegar y apagar el servidor MCP en AWS
 ```
 
 Material docente de The Power. La tienda, sus pedidos y sus políticas son ficticios.

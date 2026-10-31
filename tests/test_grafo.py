@@ -1,7 +1,7 @@
 """El grafo completo con piezas falsas: un LLM de mentira, memoria en RAM y tools/RAG simulados.
 
 Asi la CI comprueba el CABLEADO (router -> nodo -> responder, y la memoria entre turnos) sin Ollama,
-sin Neon y sin AWS. Lo caro se prueba a mano; lo que se rompe al tocar el codigo, en cada push.
+sin Neon y sin Azure. Lo caro se prueba a mano; lo que se rompe al tocar el codigo, en cada push.
 """
 
 import json

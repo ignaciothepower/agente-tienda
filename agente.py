@@ -1,6 +1,6 @@
 """El agente de la tienda: el proyecto final del master. Cada pieza es una sesion del curso.
 
-    router (reglas, S9) -> pedido | precio  (tools MCP en AWS, S10-S12)
+    router (reglas, S9) -> pedido | precio  (tools MCP en Azure, S10-S12)
                         -> rag              (PGVector en Neon, S4-S5)
                         -> charla
                         -> responder        (llama3.1 con Ollama, S1-S2)

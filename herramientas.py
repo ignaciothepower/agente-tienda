@@ -1,7 +1,7 @@
 """Las herramientas del agente viven en el servidor MCP de la S10-S12 (mcp-server-ci), no aqui.
 
 El agente es un CLIENTE MCP por HTTP: le da igual que el servidor este en tu portatil (localhost)
-o en una EC2 de AWS. Solo cambia la variable MCP_URL.
+o en la nube (Azure Container Apps). Solo cambia la variable MCP_URL.
 """
 
 import asyncio

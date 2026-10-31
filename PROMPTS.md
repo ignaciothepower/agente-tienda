@@ -8,7 +8,7 @@ Estos son los prompts que usamos en la práctica, en el mismo orden que en clase
 3. Ejecuta y compara con el apartado *Qué deberías ver*.
 4. Si no sale lo esperado, vuelve a pedírselo con lo que has aprendido.
 
-> Antes de empezar: todo lo del curso. Ollama con `llama3.1` (S1), tu base de datos de Neon de la S4 (`DATABASE_URL`), tus claves de LangFuse Cloud de la S3, el servidor MCP de la S10-S12 (repo `mcp-server-ci`) y Git con tu cuenta de GitHub (S11). AWS es opcional (S12). Todo va en un `.env` (plantilla en `.env.example`; **nunca subas tu `.env`**). Repositorio de referencia, público: https://github.com/ignaciothepower/agente-tienda. **Si usas AWS, al terminar apaga todo** (`bash aws/apagar.sh`).
+> Antes de empezar: todo lo del curso. Ollama con `llama3.1` (S1), tu base de datos de Neon de la S4 (`DATABASE_URL`), tus claves de LangFuse Cloud de la S3, el servidor MCP de la S10-S12 (repo `mcp-server-ci`) y Git con tu cuenta de GitHub (S11). Desplegar en Azure es opcional (paso 7, desde la Cloud Shell del portal de Azure, sin instalar nada en el portátil). Todo va en un `.env` (plantilla en `.env.example`; **nunca subas tu `.env`**). Repositorio de referencia, público: https://github.com/ignaciothepower/agente-tienda. **Si despliegas en Azure, al terminar apaga todo** (`bash azure/apagar.sh` en el repo `mcp-server-ci`).
 
 El resultado de referencia, con todo el código comentado, está en la carpeta `agente-tienda` del material de la sesión.
 
@@ -84,7 +84,7 @@ Cuatro fragmentos, todos por debajo de 0,72, y el primero (0,382) es justo el de
 - Reutilizamos el servidor de la S10-S12
 - Cliente MCP por Streamable HTTP
 - consultar_pedido y convertir_precio
-- MCP_URL: local o AWS
+- MCP_URL: local o Azure Container Apps
 
 **Prompt**
 
@@ -144,20 +144,20 @@ Run #1, segundo intento: calidad y secretos en verde. El primer intento fallo a 
 
 **Qué construye**
 
-- CloudShell: sin claves en el portatil
-- EC2 t3.micro + Docker (S12)
-- MCP_URL = la IP de la EC2
-- apagar.sh: todo a cero
+- Cloud Shell del portal de Azure: nada que instalar en el portatil
+- Azure Container Apps: imagen construida desde el Dockerfile, HTTPS, de 0 a 1 replica
+- MCP_URL = la URL https://...azurecontainerapps.io
+- azure/apagar.sh: borra el grupo de recursos y comprueba que no queda nada
 
 **Prompt**
 
 ```text
-Despliega la parte del agente que cabe en la capa gratuita (Sesion 12): el servidor MCP de la tienda en una EC2 t3.micro con Docker, lanzado desde AWS CloudShell con un script (security group solo con mi IP, par de claves, IMDSv2) y otro script para apagarlo todo y comprobar que queda a cero. Conecta el agente de mi portatil a esa URL y comprueba que funciona de punta a punta en la nube. Explicame por que el LLM no cabe en una t3.micro y que haria falta para tenerlo todo en la nube. Recuerdame apagar los recursos.
+Guiame para desplegar el servidor MCP de la tienda en Azure Container Apps desde la Cloud Shell del portal de Azure, sin instalar nada en mi portatil, con los scripts del repo del servidor: git clone https://github.com/ignaciothepower/mcp-server-ci.git && cd mcp-server-ci, export MI_IP=<IP publica de mi portatil> y bash azure/desplegar.sh. Antes de ejecutarlos, lee azure/desplegar.sh y azure/apagar.sh y explicame que hace cada paso (az containerapp up --source . construye la imagen en la nube desde el Dockerfile, HTTPS, escala de 0 a 1 replica y una regla de acceso que solo deja entrar a mi IP). Despues pon la URL https://...azurecontainerapps.io en MCP_URL del .env (el agente no cambia y el cerebro, llama3.1, sigue en local), prueba /salud y un turno del agente en el hilo luis: el pedido 5678 y luego "¿Y cuanto es eso en libras?". Explicame por que el LLM (unos 5 GB) se queda en mi portatil y que haria falta para tenerlo todo en la nube. Al acabar, apaga con bash azure/apagar.sh y comprueba que no queda nada.
 ```
 
 **Qué deberías ver**
 
-2 min 21 s de un comando a un servidor MCP respondiendo en AWS. La IP de tu portatil, la unica que puede entrar al 8000.
+La URL https de la app al terminar desplegar.sh, /salud respondiendo con estado ok desde tu portatil y, desde la Cloud Shell, un 403 porque no es tu IP. El agente de tu portatil contesta al pedido 5678 y a la conversion a libras usando el MCP en Azure. Tras azure/apagar.sh, el grupo de recursos ya no existe.
 
 ---
 
@@ -194,7 +194,7 @@ Una conversacion como la de Ana, pero en tu dominio, con sus trazas y la CI en v
 **Prompt**
 
 ```text
-Lleva mi agente conversacional a nivel de portfolio: 1) opcion B, cambia el LLM local por una API gratuita (por ejemplo Gemini free tier) con la clave en GitHub Secrets y despliega el agente completo (Render, Railway o AWS) para que sea accesible; 2) anade un nodo que compruebe que la respuesta solo usa los datos recuperados (como el CRAG de la Sesion 6); 3) crea en LangFuse un dataset de 5 preguntas con su respuesta esperada y evaluame el agente; 4) escribe un README de portfolio con arquitectura, decisiones, costes y como apagarlo.
+Lleva mi agente conversacional a nivel de portfolio: 1) opcion B, cambia el LLM local por un LLM por API (por ejemplo Azure OpenAI o la capa gratuita de Gemini) con la clave en GitHub Secrets y despliega el agente entero en Azure Container Apps, Render o Railway para que sea accesible; 2) anade un nodo que compruebe que la respuesta solo usa los datos recuperados (como el CRAG de la Sesion 6); 3) crea en LangFuse un dataset de 5 preguntas con su respuesta esperada y evaluame el agente; 4) escribe un README de portfolio con arquitectura, decisiones, costes y como apagarlo.
 ```
 
 **Qué deberías ver**
@@ -203,4 +203,4 @@ La URL o un video de la demo, el experimento en LangFuse y un README que otro pu
 
 ---
 
-*Material del Master AI Engineer · The Power · Ignacio de Pastors*
+*Material del Máster AI Engineer · The Power*
