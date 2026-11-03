@@ -62,6 +62,8 @@ bash azure/desplegar.sh        # Container Apps: construye la imagen en la nube 
 bash azure/apagar.sh           # SIEMPRE al acabar: borra el grupo de recursos y comprueba que no queda nada
 ```
 
+Ejecución real: desplegar tardó 4 min 56 s (región `spaincentral`); apagar, unos 29 minutos, porque el entorno de Container Apps es lento de borrar. `apagar.sh` va escribiendo el progreso y se puede relanzar sin problema.
+
 Pon la URL que te devuelve (`https://...azurecontainerapps.io`) como `MCP_URL` en tu `.env` y el agente usará las herramientas en la nube. El "cerebro" (LangGraph + llama3.1) se queda en tu portátil: un LLM de 8B necesita unos 5 GB y sin GPU tardaría minutos en responder. Para tenerlo todo en la nube habría que cambiar el LLM local por una API (por ejemplo Azure OpenAI, o la capa gratuita de Gemini para practicar) y desplegar el agente también.
 
 ## Tests y CI

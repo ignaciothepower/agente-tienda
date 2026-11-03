@@ -157,7 +157,7 @@ Guiame para desplegar el servidor MCP de la tienda en Azure Container Apps desde
 
 **Qué deberías ver**
 
-La URL https de la app al terminar desplegar.sh, /salud respondiendo con estado ok desde tu portatil y, desde la Cloud Shell, un 403 porque no es tu IP. El agente de tu portatil contesta al pedido 5678 y a la conversion a libras usando el MCP en Azure. Tras azure/apagar.sh, el grupo de recursos ya no existe.
+La URL https de la app al terminar desplegar.sh, /salud respondiendo con estado ok desde tu portatil y, desde la Cloud Shell, un 403 porque no es tu IP. El agente de tu portatil contesta al pedido 5678 y a la conversion a libras usando el MCP en Azure (la primera llamada tarda unos segundos: despierta el contenedor, que estaba a cero). Tras azure/apagar.sh, el grupo de recursos ya no existe. Borrar el entorno tarda 20-30 minutos: el script escribe una linea cada 30 s y, si la Cloud Shell se desconecta, se puede relanzar. Si tu region no acepta suscripciones de prueba, cambia con export LOC=<region> (por defecto spaincentral).
 
 ---
 
